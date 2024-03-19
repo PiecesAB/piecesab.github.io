@@ -37,12 +37,51 @@ a:hover, a:active {
 	color: #a0a0b8;
 }
 
+img {
+	max-width: 70%;
+	max-height: 320px;
+}
+
+@media (min-width:800px) { 
+	img {
+		max-width: 640px;
+		max-height: 640px;
+	}
+}
+
+button {
+	border-image: url("images/red-container.png") 10 fill;
+	border-image-width: 10px;
+	color: #f2f2f2;
+	font-size: 18px;
+	font-family: linux-biolinum;
+	min-height: 40px;
+	transition: font-size 0.1s linear;
+}
+
+.nav-button {
+	width: 140.5px;
+}
+
+button:hover, button:active {
+	cursor: pointer;
+	font-size: 22px;
+	transition: font-size 0.1s linear;
+}
+
+.img-region {
+	background: #20004040;
+	margin: 10px;
+	padding: 10px;
+	text-align: center;
+}
+
 ::selection {
-  background: #a0a0b8; /* Gecko Browsers */
+  background: #a0a0b8;
 }
 
 ::-moz-selection {
-  background: #a0a0b8; /* Gecko Browsers */
+  background: #a0a0b8;
 }
 
 .primary-container {
@@ -61,6 +100,28 @@ a:hover, a:active {
 .subtitle {
 	font-weight: 700;
 	font-size: 18pt;
+}
+
+.caption {
+	color: #d0d0d0;
+	font-family: ubuntu-mono;
+}
+
+.navigator-filler {
+	border-image: url("images/red-container.png") 10 fill;
+	border-image-width: 10px;
+	width: auto;
+}
+
+#navigator {
+	border-image: url("images/red-container.png") 10 fill;
+	border-image-width: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 984px;
+	min-height: 40px;
 }
 
 #footer {
