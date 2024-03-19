@@ -13,16 +13,36 @@
 	src: url("fonts/Axis Extrabold/Axis Extrabold.otf");
 }
 
-h1, h2, h3 {
-	font-family: axis-extrabold;
-}
-
 body {
 	background-image: url("images/background.png");
 	background-size: 100% 100%;
 	background-color: #222233;
-	color: #eeeeee;
+	color: #f2f2f2;
 	font-family: linux-biolinum; 
+}
+
+h1, h2, h3 {
+	font-family: axis-extrabold;
+}
+
+a:link {
+	color: #d0d0ff;
+}
+
+a:visited {
+	color: #ffc0ff;
+}
+
+a:hover, a:active {
+	color: #a0a0b8;
+}
+
+::selection {
+  background: #a0a0b8; /* Gecko Browsers */
+}
+
+::-moz-selection {
+  background: #a0a0b8; /* Gecko Browsers */
 }
 
 .primary-container {
@@ -31,4 +51,20 @@ body {
 	border-image: url("images/normal-container.png") 10 fill;
 	border-image-width: 10px;
 	max-width: 960px;
+}
+
+.title {
+	font-family: axis-extrabold;
+	font-size: 36pt;
+}
+
+.subtitle {
+	font-weight: 700;
+	font-size: 18pt;
+}
+
+#footer {
+	color: #808080;
+	padding: 20px;
+	text-align: center;
 }
