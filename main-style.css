@@ -1,0 +1,34 @@
+@font-face {
+	font-family: linux-biolinum;
+	src: url("fonts/Linux Biolinum/LinBiolinum_R.otf");
+}
+
+@font-face {
+	font-family: ubuntu-mono;
+	src: url("fonts/Ubuntu Mono/UbuntuMono-Regular.ttf");
+}
+
+@font-face {
+	font-family: axis-extrabold;
+	src: url("fonts/Axis Extrabold/Axis Extrabold.otf");
+}
+
+h1, h2, h3 {
+	font-family: axis-extrabold;
+}
+
+body {
+	background-image: url("images/background.png");
+	background-size: 100% 100%;
+	background-color: #222233;
+	color: #eeeeee;
+	font-family: linux-biolinum; 
+}
+
+.primary-container {
+	margin: 0 auto;
+	padding: 12px;
+	border-image: url("images/normal-container.png") 10 fill;
+	border-image-width: 10px;
+	max-width: 960px;
+}
