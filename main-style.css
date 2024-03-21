@@ -92,6 +92,14 @@ button:hover, button:active {
 	max-width: 960px;
 }
 
+.buttonlike-container {
+	margin: 0 auto;
+	padding: 12px;
+	border-image: url("images/red-container.png") 10 fill;
+	border-image-width: 10px;
+	max-width: 960px;
+}
+
 .title {
 	font-family: axis-extrabold;
 	font-size: 36pt;
@@ -128,4 +136,27 @@ button:hover, button:active {
 	color: #808080;
 	padding: 20px;
 	text-align: center;
+}
+
+#tech h1 {
+	font-family: linux-biolinum;
+}
+
+#tech .namespace-block {
+	padding: 10px;
+	font-size: x-large;
+}
+
+#tech .declaration-kind {
+	color: #d0d0d0;
+	font-size: small;
+	font-family: ubuntu-mono;
+}
+
+#tech .namespace-title {
+	font-size: x-large;
+}
+
+#tech .class-title {
+	font-size: large;
 }

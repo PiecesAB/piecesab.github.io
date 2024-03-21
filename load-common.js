@@ -43,8 +43,10 @@ function AddFooter() {
 	`);
 }
 
-window.onload = function LoadCommon() {
+function LoadCommon() {
 	AddNavigator();
 	AddHeader();
 	AddFooter();
 }
+
+document.addEventListener("DOMContentLoaded", LoadCommon);
