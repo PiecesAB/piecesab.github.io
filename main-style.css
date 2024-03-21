@@ -92,10 +92,18 @@ button:hover, button:active {
 	max-width: 960px;
 }
 
-.buttonlike-container {
+.red-container {
 	margin: 0 auto;
 	padding: 12px;
 	border-image: url("images/red-container.png") 10 fill;
+	border-image-width: 10px;
+	max-width: 960px;
+}
+
+.yellow-container {
+	margin: 0 auto;
+	padding: 12px;
+	border-image: url("images/yellow-container.png") 10 fill;
 	border-image-width: 10px;
 	max-width: 960px;
 }
@@ -159,4 +167,17 @@ button:hover, button:active {
 
 #tech .class-title {
 	font-size: large;
+}
+
+#tech .main-line-subinfo {
+	padding: 2px;
+	background: #d0d0d030;
+}
+
+#tech .comment-region {
+	padding: 6px;
+	margin: 10px 0;
+	background: #00000030;
+	border-color: #40303060;
+	border-style: inset;
 }
