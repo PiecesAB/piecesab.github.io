@@ -146,38 +146,78 @@ button:hover, button:active {
 	text-align: center;
 }
 
-#tech h1 {
-	font-family: linux-biolinum;
-}
-
-#tech .namespace-block {
-	padding: 10px;
-	font-size: x-large;
-}
-
-#tech .declaration-kind {
-	color: #d0d0d0;
-	font-size: small;
+#tech {
 	font-family: ubuntu-mono;
+	font-weight: 400;
+	
+	.namespace-block {
+		padding: 10px;
+		font-size: x-large;
+	}
+
+	.declaration-kind {
+		color: #d0d0d0;
+		font-size: small;
+		font-weight: 400;
+	}
+
+	.namespace-title {
+		font-size: x-large;
+	}
+
+	.class-title {
+		font-size: large;
+	}
+
+	.main-line-subinfo {
+		padding: 2px;
+		background: #d0d0d030;
+	}
+
+	.comment-region {
+		padding: 6px;
+		margin: 10px 0;
+		background: #00000030;
+		border-color: #40303060;
+		border-style: inset;
+	}
+	
+	.red-expand-button {
+		text-align: center;
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		font-weight: 700;
+		font-size: xx-large;
+		margin: 0 auto;
+		padding: 2px;
+		border-image: url("images/red-container.png") 10 fill;
+		border-image-width: 10px;
+	}
+	
+	.yellow-expand-button {
+		text-align: center;
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		font-weight: 700;
+		font-size: x-large;
+		margin: 0 auto;
+		padding: 2px;
+		border-image: url("images/yellow-container.png") 10 fill;
+		border-image-width: 10px;
+	}
+	
+	.red-expand-button:hover, .yellow-expand-button:hover {
+		cursor: pointer;
+	}
+	
+	.expand-region {
+		display: none;
+	}
+	
+	.expand-region-visible {
+		display: inline;
+	}
 }
 
-#tech .namespace-title {
-	font-size: x-large;
-}
-
-#tech .class-title {
-	font-size: large;
-}
-
-#tech .main-line-subinfo {
-	padding: 2px;
-	background: #d0d0d030;
-}
-
-#tech .comment-region {
-	padding: 6px;
-	margin: 10px 0;
-	background: #00000030;
-	border-color: #40303060;
-	border-style: inset;
-}

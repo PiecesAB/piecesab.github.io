@@ -1,3 +1,29 @@
+function ArrowClicked(arrow) {
+	let curr = arrow.parentNode;
+	if (Array.from(curr.children).find(e => e.classList.contains('expand-region')) === undefined 
+	&&  Array.from(curr.children).find(e => e.classList.contains('expand-region-visible')) === undefined) {
+		curr = curr.parentNode;
+	}
+	let expand = Array.from(curr.children).find(e => e.classList.contains('expand-region'));
+	if (expand === undefined) {
+		expand = Array.from(curr.children).find(e => e.classList.contains('expand-region-visible'));
+		expand.classList.remove("expand-region-visible");
+		expand.classList.add("expand-region");
+		arrow.innerHTML = "&rarr;"
+	}
+	else {
+		expand.classList.remove("expand-region");
+		expand.classList.add("expand-region-visible");
+		arrow.innerHTML = "&darr;"
+	}
+}
+
+function GetExpandButton(className) {
+	return `
+		<span class="${className}" onclick="ArrowClicked(this)">&rarr;</span>
+	`;
+}
+
 function GetCommentElement(comment, defaultElement) {
 	let commentRegion = "";
 	if (comment.summary !== "" 
@@ -84,7 +110,7 @@ function GetClassElement(classId, classData) {
 		if (dec.mainType !== "") {
 			kindString = `${dec.kind} &bull; ${dec.mainType}`
 		}
-		if (dec["static"] === "true" && dec.kind !== "const") {
+		if (dec["static"] === true && dec.kind !== "const") {
 			kindString = "static " + kindString;
 		}
 		let subInfo = "";
@@ -122,14 +148,22 @@ function GetClassElement(classId, classData) {
 		innerList.push(GetClassElement(innerId, innerData));
 	}
 	
+	let kindStr = classData.kind;
+	if (classData["abstract"] === true) {
+		kindStr = "abstract " + kindStr;
+	}
+	
 	return `
 	<div class="red-container class-element">
-		<span class="declaration-kind">${classData.kind}</span> 
+		${GetExpandButton("yellow-expand-button")}
+		<span class="declaration-kind">${kindStr}</span> 
 		<span class="class-title">${classId}</span>
 		${baseList}
-		${commentRegion}
-		${innerList.join("")}
-		${declarationList.join("")}
+		<div class="expand-region">
+			${commentRegion}
+			${innerList.join("")}
+			${declarationList.join("")}
+		</div>
 	</div>
 	`;
 }
@@ -147,9 +181,12 @@ function HandleData(data) {
 		`
 		<div class="primary-container">
 			<div class="namespace-block">
+				${GetExpandButton("red-expand-button")}
 				<span class="declaration-kind">namespace</span> <span class="namespace-title">${namespaceId}</span>
 			</div>
-			${classElementList.join("")}
+			<div class="expand-region">
+				${classElementList.join("")}
+			</div>
 		</div>
 		`);
 	}
