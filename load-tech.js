@@ -128,9 +128,13 @@ function GetClassElement(classId, classData) {
 			for (const [mpname, mparam] of Object.entries(dec.methodParams)) {
 				let subInfo = "";
 				if (mparam.defaultValue !== "") {
-					subInfo = ` <span class="main-line-subinfo">= ${mparam.defaultValue}</span>`
+					subInfo = ` <span class="main-line-subinfo">= ${mparam.defaultValue}</span>`;
 				}
-				mparamList.push(`<span class="declaration-kind">${mparam.paramType}</span> ${mpname}${subInfo}`)
+				let refInfo = "";
+				if (mparam.modifierString !== "") {
+					refInfo = `${mparam.modifierString} `;
+				}
+				mparamList.push(`<span class="declaration-kind">${refInfo}${mparam.paramType}</span> ${mpname}${subInfo}`);
 			}
 			methodInfo = `(${mparamList.join(", ")})`;
 		}
